@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shelby Daniel | Language Systems & Editorial Strategy</title>
+
+<style>
+:root {
+  --cream: #f7efe3;
+  --black: #201c1f;
+  --sable: #9a6f45;
+  --sage: #8fa58b;
+  --sage-soft: #dbe5d4;
+  --dusty-purple: #8f7aa8;
+  --dusty-soft: #e8deee;
+  --sea-glass: #b9d6cf;
+  --clay: #c58f6a;
+  --moon: #fffaf3;
+  --midnight-plum: #64506f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+body {
+  background: var(--cream);
+  color: var(--black);
+  line-height: 1.75;
+}
+
+/* ===== HEADER ===== */
+
+header {
+  padding: 90px 30px 60px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 20% 20%, var(--sea-glass), transparent 28%),
+    radial-gradient(circle at 80% 10%, var(--dusty-soft), transparent 30%),
+    radial-gradient(circle at 50% 90%, var(--sage-soft), transparent 35%),
+    var(--cream);
+}
+
+.kicker {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--sable);
+}
+
+h1 {
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  margin: 12px 0;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+h1::before {
+  content: "☾";
+  display: block;
+  font-size: 2rem;
+  color: var(--dusty-purple);
+  margin-bottom: 6px;
+  letter-spacing: 0;
+}
+
+.deck {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: rgba(32, 28, 31, 0.8);
+}
+
+/* ===== NAV ===== */
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 25px 0 10px;
+}
+
+nav button {
+  border: none;
+  background: transparent;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: var(--sable);
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+
+nav button:hover {
+  color: var(--black);
+  border-bottom: 2px solid var(--sage);
+}
+a:hover {
+  color: var(--midnight-plum);
+}
+
+nav button.active {
+  color: var(--black);
+  border-bottom: 2px solid var(--dusty-purple);
+}
+
+/* ===== LAYOUT ===== */
+
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  position: relative;
+  margin-bottom: 35px;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 2px;
+  background: var(--sage);
+  margin-top: 12px;
+}
+
+/* ===== ABOUT ===== */
+
+.about-intro {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background: rgba(255, 250, 243, 0.88);
+  padding: 50px;
+  border: 1px solid rgba(154, 111, 69, 0.18);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(32, 28, 31, 0.08);
+}
+
+.about-photo {
+  flex-shrink: 0;
+}
+
+.about-photo img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 50%;
+  box-shadow: 0 18px 40px rgba(32,28,31,.12);
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h2 {
+  margin: 10px 0 25px;
+}
+
+.about-content h2::after {
+  display: none;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.signature {
+  margin-top: 20px;
+  color: var(--dusty-purple);
+  font-size: 1.3rem;
+  font-style: italic;
+  display: block;
+}
+
+/* ===== PORTFOLIO ===== */
+
+.portfolio-piece {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 480px;
+  align-items: center;
+  gap: 50px;
+  background: rgba(255, 250, 243, 0.92);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(154, 111, 69, 0.18);
+  border-radius: 24px;
+  padding: 50px;
+  margin-bottom: 45px;
+  box-shadow: 0 18px 40px rgba(32, 28, 31, 0.08);
+}
+
+.portfolio-copy {
+  min-width: 0;
+}
+
+.portfolio-image,
+.portfolio-video {
+  width: 100%;
+  transform: none;
+}
+
+.portfolio-image img,
+.portfolio-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(32, 28, 31, 0.08);
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sable);
+  margin-bottom: 8px;
+}
+
+.portfolio-copy h3 {
+  margin: 10px 0 20px;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.project-context {
+  margin-bottom: 25px;
+  color: rgba(32, 28, 31, 0.8);
+}
+
+.project-copy {
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(154, 111, 69, 0.18);
+}
+
+.project-copy h4 {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sable);
+  margin-bottom: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.project-meta {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--sable);
+  font-family: Arial, sans-serif;
+}
+
+.work-category {
+  margin: 55px 0 20px;
+}
+
+.work-category:first-of-type {
+  margin-top: 0;
+}
+
+.category-label {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sable);
+  border-bottom: 2px solid var(--dusty-purple);
+  padding-bottom: 6px;
+}
+
+.category-label::before {
+  content: "☾";
+  margin-right: 8px;
+  color: var(--midnight-plum);
+}
+
+.section-intro {
+  color: rgba(32, 28, 31, 0.65);
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+/* ===== CONTACT ===== */
+
+.contact-section {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(255, 250, 243, 0.88);
+  border: 1px solid rgba(154, 111, 69, 0.18);
+  border-radius: 22px;
+  padding: 45px;
+  box-shadow: 0 18px 40px rgba(32, 28, 31, 0.08);
+}
+
+.contact-section h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-copy {
+  margin-bottom: 30px;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--sage);
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border-radius: 999px;
+  transition: 0.2s;
+}
+
+.contact-button:hover {
+  background: var(--dusty-purple);
+}
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.linkedin-button {
+  display: inline-block;
+  padding: 14px 28px;
+  background: transparent;
+  border: 1px solid var(--dusty-purple);
+  color: var(--dusty-purple);
+  text-decoration: none;
+  letter-spacing: 1px;
+  border-radius: 999px;
+  transition: 0.2s;
+}
+
+.linkedin-button:hover {
+  background: var(--dusty-purple);
+  color: white;
+}
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.linkedin-button {
+  display: inline-block;
+  padding: 14px 28px;
+  background: transparent;
+  border: 1px solid var(--dusty-purple);
+  color: var(--dusty-purple);
+  text-decoration: none;
+  letter-spacing: 1px;
+  border-radius: 999px;
+  transition: 0.2s;
+}
+
+.linkedin-button:hover {
+  background: var(--dusty-purple);
+  color: white;
+}
+/* ===== FOOTER ===== */
+
+footer {
+  text-align: center;
+  margin: 70px 0 30px;
+  font-size: 0.85rem;
+  color: var(--sable);
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 900px) {
+  .about-intro {
+    padding: 35px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-photo img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .portfolio-piece {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-image,
+  .portfolio-video {
+    width: 100%;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="kicker">
+    Language Systems • Product Storytelling • Workflow Management
+  </div>
+
+  <h1>Shelby Daniel</h1>
+
+  <div class="deck">
+    I help design copywriting systems with clarity, intuition and structure to turn complex product stories into content that feels thoughtful, scalable and human.
+  </div>
+</header>
+
+<nav>
+  <button class="active" onclick="showTab('about', event)">About</button>
+  <button onclick="showTab('work', event)">Selected Work</button>
+  <button onclick="showTab('contact', event)">Contact</button>
+</nav>
+
+<main>
+
+<section id="about" class="active">
+  <div class="about-intro">
+
+    <div class="about-photo">
+      <img src="images/headshot.png" alt="Shelby Daniel">
+    </div>
+
+    <div class="about-content">
+      <div class="kicker">About Me</div>
+
+      <h2>Writer. Systems Thinker. Storytelling Enthusiast.</h2>
+
+      <p>
+        I take a right-brain approach to left-brain work. My creativity is grounded in both compelling copywriting and a work-smarter-not-harder mentality. Aiming to write, understand and connect with an audience, whether B2B or B2C, drives my work ethic. Equally impactful is my drive to develop scalable, streamlined workflows.
+      </p>
+
+      <p>
+        I'm a Tampa Bay native with a love for all things storytelling. My passion for writing and reporting was honed at Fordham University, where I graduated in 2020 with a Bachelor of Arts in Journalism and gained newsroom experience at NPR affiliate WFUV.
+      </p>
+
+      <p>
+  In my free time, you're likely to find me at a local movie theater, browsing the aisles of a library, cheering on the Rays at a ballgame or relaxing at home with my partner and cat.
+</p>
+
+<div class="signature">— Shelby</div>
+
+</section>
+
+<section id="work">
+  <h2>Selected Work</h2>
+
+  <div class="work-category">
+    <span class="category-label">Systems & Operations</span>
+  </div>
+
+  <div class="portfolio-piece">
+    <div class="portfolio-copy">
+      <span class="eyebrow">Operations & Systems Design</span>
+
+      <h3>Workflow Documentation & Process Architecture</h3>
+
+      <p class="project-context">
+        Designed and maintained a centralized operational ecosystem for
+        product content development, documentation management and team
+        enablement.
+      </p>
+
+      <div class="project-copy">
+        <h4>Project Overview</h4>
+
+        <p>
+          Developed an interconnected documentation framework that mapped
+          key content operations from intake through publication. The
+          system combined standard operating procedures, SharePoint
+          documentation libraries, workflow documentation and value
+          stream maps into a single source of operational truth.
+        </p>
+
+      </div>
+
+      <div class="project-meta">
+        Role: Product Copy Supervisor · Workflow Design · SOP Development · Knowledge Management
+      </div>
+    </div>
+
+    <div class="portfolio-image">
+      <img
+        src="images/workflows.png"
+        alt="Workflow Documentation and SOP Ecosystem"
+      />
+    </div>
+  </div>
+
+  <div class="work-category">
+    <span class="category-label">Editorial & Marketing</span>
+  </div>
+
+  <div class="portfolio-piece editorial-video-piece">
+    <div class="portfolio-copy">
+      <span class="eyebrow">Editorial Video Copy</span>
+
+      <h3>Stationary Sectionals Market Video</h3>
+
+      <p class="project-context">
+        Editorial copywriting for a motion-based media asset displayed on TVs
+        in the product area at an industry market. The copy was written to feel
+        short, polished and visually complementary to the pacing of the video.
+      </p>
+
+      <div class="project-copy">
+        <h4>Project Overview</h4>
+
+        <p>
+          This piece was developed as a market-facing product storytelling asset,
+          using concise editorial language to support the visual flow of the video.
+          The goal was to create copy that could quickly communicate comfort,
+          style and merchandising value in a high-traffic showroom environment.
+        </p>
+      </div>
+
+      <div class="project-meta">
+        Role: Copywriter · Editorial Storytelling · Market Media Asset
+      </div>
+    </div>
+
+    <div class="portfolio-video">
+  <iframe
+    src="https://player.vimeo.com/video/1202863501"
+    title="Stationary Sectionals Market Video"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+  </div>
+
+  <div class="portfolio-piece editorial-video-piece">
+    <div class="portfolio-copy">
+      <span class="eyebrow">Marketing Video Copy</span>
+
+      <h3>Reclining Furniture Feature Video</h3>
+
+      <p class="project-context">
+        Feature-forward marketing copy for a motion-based video asset highlighting the convenience, comfort and immersive technology built into reclining furniture.
+      </p>
+
+      <div class="project-copy">
+        <h4>Project Overview</h4>
+
+        <p>
+          This piece was written to spotlight richly convenient product features in a way that felt elevated, accessible and lifestyle-driven. The copy framed reclining furniture as more than seating, instead positioning it as a relaxation hub and entertainment destination.
+        </p>
+      </div>
+
+      <div class="project-meta">
+        Role: Copywriter · Marketing Copy · Feature Storytelling · Video Asset
+      </div>
+    </div>
+
+<div class="portfolio-video">
+  <iframe
+    src="https://player.vimeo.com/video/1202863534"
+    title="Reclining Furniture Feature Video"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+  </div>
+
+  <div class="work-category">
+    <span class="category-label">Product Storytelling</span>
+  </div>
+
+  <div class="portfolio-piece">
+    <div class="portfolio-copy">
+      <span class="eyebrow">Ashley Luxe Collection</span>
+      <h3>Bracken King Canopy Bed</h3>
+
+      <p class="project-context">
+        Luxury product storytelling that applies elevated editorial language while supporting merchandising goals in a premium eCommerce environment.
+      </p>
+
+      <div class="project-copy">
+        <h4>Published Product Copy</h4>
+        <p>
+          Clean-lined silhouettes and natural materials are harmoniously paired in the Bracken canopy bed. A French oak finish enhances the wood's timeless character, while the modern canopy look brings an air of heightened elegance to your bedroom. With artisanal style and refined design, this bed is an artfully crafted approach to modern aesthetics.
+        </p>
+      </div>
+
+      <div class="project-meta">
+        Role: Product Copywriter · Product Storytelling · Luxury eCommerce Content
+      </div>
+    </div>
+
+    <div class="portfolio-image">
+      <a href="https://www.ashleyfurniture.com/p/bracken_king_canopy_bed/B985B8.html?cgid=luxe-bedroom-furniture" target="_blank" rel="noopener noreferrer">
+        <img src="images/Bracken_bed.jpg" alt="Bracken King Canopy Bed">
+      </a>
+    </div>
+  </div>
+
+  <div class="portfolio-piece">
+    <div class="portfolio-copy">
+      <span class="eyebrow">Ashley Luxe Collection</span>
+      <h3>Neo Dining Table</h3>
+
+      <p class="project-context">
+        Editorial product copy created to convey contemporary sophistication, material richness and everyday usability in a premium digital shopping experience.
+      </p>
+
+      <div class="project-copy">
+        <h4>Published Product Copy</h4>
+        <p>
+          Refined simplicity meets everyday comfort in the Neo dining table. Its dark espresso finish adapts effortlessly to your personal style. A thick tabletop and interconnected legs lend a substantial feel. Elevated yet inviting, this table's combination of gentle curves and clean lines helps you create a serene dining space.
+        </p>
+      </div>
+
+      <div class="project-meta">
+        Role: Product Copywriter · Product Storytelling · Luxury eCommerce Content
+      </div>
+    </div>
+
+    <div class="portfolio-image">
+      <a href="https://www.ashleyfurniture.com/p/neo_dining_table/D954-50.html?cgid=luxe-dining-room-furniture" target="_blank" rel="noopener noreferrer">
+        <img src="images/Neo_dining_table.jpg" alt="Neo Dining Table">
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+
+  <div class="contact-section">
+
+    <div class="kicker">Get In Touch</div>
+
+    <h2>Let's Connect</h2>
+
+    <p class="contact-copy">
+      I'm always interested in conversations about content strategy,
+      workflow development, editorial storytelling, AI-assisted content
+      systems and opportunities to build better experiences through
+      language and process design.
+    </p>
+
+    <div class="contact-links">
+
+      <a
+        href="mailto:shelby.daniel97@gmail.com"
+        class="contact-button"
+      >
+        Email Me
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/shelby-daniel-31a128187/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="linkedin-button"
+      >
+        Connect on LinkedIn
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  © 2026 Shelby Daniel — Language Systems & Product Storytelling
+</footer>
+
+<script>
+function showTab(tabId, event) {
+  const sections = document.querySelectorAll("section");
+  const buttons = document.querySelectorAll("nav button");
+
+  sections.forEach(section => section.classList.remove("active"));
+  buttons.forEach(button => button.classList.remove("active"));
+
+  document.getElementById(tabId).classList.add("active");
+  event.target.classList.add("active");
+}
+</script>
+
+</body>
+</html>
