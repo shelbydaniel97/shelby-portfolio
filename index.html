@@ -298,8 +298,8 @@ h2::after {
 .category-label {
   display: inline-block;
   font-family: Arial, sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--sable);
   border-bottom: 2px solid var(--dusty-purple);
@@ -435,6 +435,54 @@ footer {
     transform: none;
   }
 }
+.sticky-header {
+  position: fixed;
+  top: -90px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 20px;
+  background: rgba(255, 250, 243, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(154, 111, 69, 0.18);
+  box-shadow: 0 8px 24px rgba(32, 28, 31, 0.06);
+  transition: top 0.35s ease;
+}
+
+.sticky-header.show {
+  top: 0;
+}
+
+}
+
+.sticky-name {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+
+}
+
+.sticky-moon {
+  color: var(--dusty-purple);
+  font-size: 1.2rem;
+}
+
+.sticky-subhead {
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--sable);
+}
+
+@media (max-width: 700px) {
+  .sticky-subhead {
+    display: none;
+  }
+}
 </style>
 </head>
 
@@ -448,10 +496,15 @@ footer {
   <h1>Shelby Daniel</h1>
 
   <div class="deck">
-    I help design copywriting systems with clarity, intuition and structure to turn complex product stories into content that feels thoughtful, scalable and human.
+    I create copywriting systems with clarity, intuition and structure to turn complex product stories into content that feels thoughtful, scalable and human.
   </div>
 </header>
+<div class="sticky-header">
 
+  <span class="sticky-name">Shelby Daniel</span>
+  <span class="sticky-moon">☾</span>
+  <span class="sticky-subhead">Language Systems · Product Storytelling · Workflow Management</span>
+</div>
 <nav>
   <button class="active" onclick="showTab('about', event)">About</button>
   <button onclick="showTab('work', event)">Selected Work</button>
@@ -566,7 +619,7 @@ footer {
 
     <div class="portfolio-video">
   <iframe
-    src="https://player.vimeo.com/video/1202863501"
+    src="https://player.vimeo.com/video/1202863501?background=1"
     title="Stationary Sectionals Market Video"
     frameborder="0"
     allow="autoplay; fullscreen; picture-in-picture"
@@ -600,7 +653,7 @@ footer {
 
 <div class="portfolio-video">
   <iframe
-    src="https://player.vimeo.com/video/1202863534"
+    src="https://player.vimeo.com/video/1202863534?background=1"
     title="Reclining Furniture Feature Video"
     frameborder="0"
     allow="autoplay; fullscreen; picture-in-picture"
@@ -726,6 +779,19 @@ function showTab(tabId, event) {
   document.getElementById(tabId).classList.add("active");
   event.target.classList.add("active");
 }
+
+const stickyHeader = document.querySelector(".sticky-header");
+const mainHeader = document.querySelector("header");
+
+window.addEventListener("scroll", function () {
+  const headerBottom = mainHeader.offsetHeight;
+
+  if (window.scrollY > headerBottom - 80) {
+    stickyHeader.classList.add("show");
+  } else {
+    stickyHeader.classList.remove("show");
+  }
+});
 </script>
 
 </body>
