@@ -226,10 +226,20 @@ h2::after {
 .portfolio-image img,
 .portfolio-video iframe {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: auto;
   display: block;
   border-radius: 18px;
   box-shadow: 0 14px 30px rgba(32, 28, 31, 0.08);
+}
+.portfolio-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-image img {
+  max-height: 420px;
+  object-fit: contain;
 }
 
 .eyebrow {
