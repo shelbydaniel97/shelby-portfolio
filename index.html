@@ -516,6 +516,26 @@ h2::after {
     padding: 24px;
   }
 }
+/* ===== CATALOG CASE STUDY ===== */
+
+.catalog-case-study {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 30px;
+}
+
+.catalog-flow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 700px) {
+  .catalog-case-study {
+    padding: 24px;
+  }
+
+  .catalog-flow {
+    grid-template-columns: 1fr;
+  }
+}
 /* ===== CONTACT ===== */
 
 .contact-section {
@@ -1049,6 +1069,109 @@ footer {
       </p>
     </div>
   </div>
+
+</article>
+<article class="portfolio-piece catalog-case-study"
+         aria-labelledby="catalog-title">
+
+  <div class="portfolio-copy">
+    <span class="eyebrow">
+      Editorial Production &amp; Process Improvement
+    </span>
+
+    <h3 id="catalog-title">Catalog Development</h3>
+
+    <p class="project-context">
+      Combined product copywriting, AI-assisted drafting and
+      structured content preparation to support catalog
+      production across repeated revisions and design handoffs.
+    </p>
+  </div>
+
+  <div class="case-study-details">
+    <div>
+      <h4>Challenge</h4>
+      <p>
+        Catalog production required concise, accurate product
+        bullets and consistently structured information.
+        Repeated revisions also required clear tracking
+        and reliable handoffs between copy and design.
+      </p>
+    </div>
+
+    <div>
+      <h4>Approach</h4>
+      <p>
+        Integrated Copilot into bullet drafting, then reviewed
+        and refined the copy for accuracy and consistency.
+        Helped restructure and version content for InDesign
+        import while tracking progress across production
+        iterations.
+      </p>
+    </div>
+
+    <div>
+      <h4>Impact</h4>
+      <p>
+        Prepared reviewed catalog copy and structured content
+        for design handoff, with tracking that maintained
+        visibility into revisions and production status.
+      </p>
+    </div>
+
+    <div>
+      <h4>My Role</h4>
+      <p>
+        Wrote and reviewed product bullets, integrated
+        AI-assisted drafting into the process, helped prepare
+        content for InDesign import and maintained
+        production tracking.
+      </p>
+    </div>
+  </div>
+
+  <ol class="production-flow catalog-flow"
+      aria-label="Catalog content workflow">
+
+    <li>
+      <span class="flow-step">01</span>
+      <h4>Source Content</h4>
+      <p>
+        Product information and existing descriptions.
+      </p>
+    </li>
+
+    <li>
+      <span class="flow-step">02</span>
+      <h4>Structured Content</h4>
+      <p>
+        AI-assisted bullets, editorial review and versioned
+        information prepared for import.
+      </p>
+    </li>
+
+    <li>
+      <span class="flow-step">03</span>
+      <h4>InDesign Handoff</h4>
+      <p>
+        Prepared content delivered for catalog layout
+        and production.
+      </p>
+    </li>
+
+  </ol>
+
+  <figure class="case-study-figure">
+    <img
+      src="images/Catalog.png"
+      alt="Rowanbeck dining collection catalog page showing product photography and concise feature bullets, with product specifications blurred."
+      loading="lazy"
+    >
+    <figcaption>
+      Catalog layout showing product feature copy in context.
+      Selected product details obscured.
+    </figcaption>
+  </figure>
 
 </article>
   <div class="portfolio-piece">
