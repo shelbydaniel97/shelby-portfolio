@@ -325,7 +325,57 @@ h2::after {
   font-style: italic;
   margin-bottom: 40px;
 }
+/* ===== BY THE NUMBERS ===== */
 
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  padding: 30px;
+  margin-bottom: 45px;
+  background: rgba(255, 250, 243, 0.92);
+  border: 1px solid rgba(154, 111, 69, 0.18);
+  border-radius: 24px;
+}
+
+.metrics-title {
+  grid-column: 1 / -1;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sable);
+}
+
+.metric-value {
+  display: block;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  color: var(--midnight-plum);
+  margin-bottom: 10px;
+}
+
+.metric-label {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .metrics-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .metrics-strip {
+    grid-template-columns: 1fr;
+  }
+}
 /* ===== CONTACT ===== */
 
 .contact-section {
@@ -554,7 +604,31 @@ footer {
   <div class="work-category">
     <span class="category-label">Systems Development &amp; Operations</span>
   </div>
+<div class="metrics-strip" role="group" aria-labelledby="metrics-heading">
+  <h3 class="metrics-title" id="metrics-heading">
+    By the Numbers · 2026 YTD
+  </h3>
 
+  <div class="metric">
+    <span class="metric-value">19,650+</span>
+    <span class="metric-label">Documented SKU touchpoints</span>
+  </div>
+
+  <div class="metric">
+    <span class="metric-value">606</span>
+    <span class="metric-label">Amazon SKU touchpoints</span>
+  </div>
+
+  <div class="metric">
+    <span class="metric-value">783</span>
+    <span class="metric-label">Catalog series prepared</span>
+  </div>
+
+  <div class="metric">
+    <span class="metric-value">3.3×</span>
+    <span class="metric-label">Production capacity, up to</span>
+  </div>
+</div>
   <div class="portfolio-piece">
     <div class="portfolio-copy">
       <span class="eyebrow">Operations & Systems Design</span>
