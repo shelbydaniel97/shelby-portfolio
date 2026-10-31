@@ -452,6 +452,58 @@ h2::after {
     grid-template-columns: 1fr;
   }
 }
+/* ===== SCALING PRODUCTION ===== */
+
+.scaling-case-study {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 30px;
+}
+
+.production-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.production-flow li {
+  padding: 22px;
+  background: var(--dusty-soft);
+  border: 1px solid rgba(143, 122, 168, 0.2);
+  border-radius: 16px;
+}
+
+.flow-step {
+  display: block;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  color: var(--midnight-plum);
+}
+
+.production-flow h4 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.production-flow p {
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .scaling-case-study {
+    padding: 24px;
+  }
+
+  .production-flow {
+    grid-template-columns: 1fr;
+  }
+}
 /* ===== CONTACT ===== */
 
 .contact-section {
@@ -796,6 +848,124 @@ footer {
       for confidentiality.
     </figcaption>
   </figure>
+
+</article>
+<article class="portfolio-piece scaling-case-study"
+         aria-labelledby="scaling-title">
+
+  <div class="portfolio-copy">
+    <span class="eyebrow">
+      Production Efficiency &amp; Editorial Quality
+    </span>
+
+    <h3 id="scaling-title">Scaling Product Copy Production</h3>
+
+    <p class="project-context">
+      Developed an AI-assisted production workflow that increased
+      daily product-copy capacity while keeping human editorial
+      review central to the process.
+    </p>
+
+    <div class="case-study-results"
+         aria-label="Production capacity comparison">
+
+      <div>
+        <span class="result-value">30–40</span>
+        <span class="result-label">
+          SKUs per day before implementation
+        </span>
+      </div>
+
+      <div>
+        <span class="result-value">100+</span>
+        <span class="result-label">
+          SKUs per day with the updated workflow
+        </span>
+      </div>
+
+      <div>
+        <span class="result-value">3.3×</span>
+        <span class="result-label">
+          Production capacity, up to
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="case-study-details">
+    <div>
+      <h4>Challenge</h4>
+      <p>
+        Manual drafting limited daily production to approximately
+        30–40 SKUs. Increasing output required a repeatable process
+        that preserved product accuracy and editorial standards.
+      </p>
+    </div>
+
+    <div>
+      <h4>Approach</h4>
+      <p>
+        Built structured AI instructions to turn supplied product
+        information into starting drafts. Human review remained
+        responsible for checking facts, refining brand voice and
+        shaping clear, customer-focused final copy.
+      </p>
+    </div>
+
+    <div>
+      <h4>Impact</h4>
+      <p>
+        Daily production capacity increased to 100+ SKUs.
+        Compared with the previous baseline of approximately
+        30 SKUs per day, this represented up to 3.3 times
+        the production capacity.
+      </p>
+    </div>
+
+    <div>
+      <h4>My Role</h4>
+      <p>
+        Designed and refined the AI-assisted workflow, developed
+        drafting instructions and applied editorial judgment
+        to review and improve the resulting copy.
+      </p>
+    </div>
+  </div>
+
+  <ol class="production-flow" aria-label="Product copy workflow">
+    <li>
+      <span class="flow-step">01</span>
+      <h4>Product Data</h4>
+      <p>
+        Source descriptions, features and specifications.
+      </p>
+    </li>
+
+    <li>
+      <span class="flow-step">02</span>
+      <h4>AI Drafting</h4>
+      <p>
+        Structured instructions generate starting copy.
+      </p>
+    </li>
+
+    <li>
+      <span class="flow-step">03</span>
+      <h4>Human Review</h4>
+      <p>
+        Check accuracy, refine voice and clarify benefits.
+      </p>
+    </li>
+
+    <li>
+      <span class="flow-step">04</span>
+      <h4>Final Copy</h4>
+      <p>
+        Reviewed product content ready for handoff.
+      </p>
+    </li>
+  </ol>
 
 </article>
   <div class="portfolio-piece">
