@@ -536,6 +536,49 @@ h2::after {
     grid-template-columns: 1fr;
   }
 }
+/* ===== ON-IMAGE PDP COPY ===== */
+
+.onimage-case-study {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 30px;
+}
+
+.onimage-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+}
+
+.onimage-gallery figure {
+  min-width: 0;
+}
+
+.onimage-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(154, 111, 69, 0.18);
+}
+
+.onimage-gallery figcaption {
+  margin-top: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(32, 28, 31, 0.7);
+}
+
+@media (max-width: 700px) {
+  .onimage-case-study {
+    padding: 24px;
+  }
+
+  .onimage-gallery {
+    grid-template-columns: 1fr;
+  }
+}
 /* ===== CONTACT ===== */
 
 .contact-section {
@@ -1344,6 +1387,54 @@ footer {
       </a>
     </div>
   </div>
+<article class="portfolio-piece onimage-case-study"
+         aria-labelledby="onimage-title">
+
+  <div class="portfolio-copy">
+    <span class="eyebrow">
+      eCommerce Copy &amp; Product Benefits
+    </span>
+
+    <h3 id="onimage-title">On-Image PDP Copy</h3>
+
+    <p class="project-context">
+      Concise copy for product detail page imagery, bringing
+      key benefits directly into the browsing experience.
+      Each message translates product features into clear,
+      customer-friendly language within limited space.
+    </p>
+
+    <div class="project-meta">
+      Role: Copywriter · Benefit Messaging · On-Image Product Copy
+    </div>
+  </div>
+
+  <div class="onimage-gallery">
+    <figure>
+      <img
+        src="images/Onimage1.png"
+        alt="Sectional sofa with four benefit callouts: stain-resistant performance fabric, easy-clean confidence, supportive foam comfort, and engineered for everyday durability."
+        loading="lazy"
+      >
+      <figcaption>
+        Short benefit callouts designed for quick scanning.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="images/Onimage2.png"
+        alt="Sofa detail with the headline Low effort, easy clean and supporting copy Durable fabric helps keep stains at bay."
+        loading="lazy"
+      >
+      <figcaption>
+        A benefit-led headline paired with a concise
+        supporting explanation.
+      </figcaption>
+    </figure>
+  </div>
+
+</article>
 </section>
 
 <section id="contact">
